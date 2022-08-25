@@ -7,7 +7,7 @@
   --color-dark-white: #bdbdbd;
   --color-pink: #fe918d;
   --color-dark-pink: #ff6863;
-  --color-dark-grey: #333333;
+  --color-dark-grey: #4d4d4d;
   --color-grey: #616161;
   --color-light-grey: #7c7979;
   --color-blue: #73aace;
@@ -33,37 +33,51 @@
 
 /* Universal tags */
 body {
-  color: #000;
-  font-size: 16px;
+  /* font-size: 16px; */
   cursor: default;
-  line-height: 1.6;
-  font-weight: 400;
   font-family: "Open Sans", "맑은고딕", "Malgun Gothic", "apple Gothic", "Apple SD Gothic Neo", Dotum, "돋움", Gulim, "굴림", "Helvetica-Neue", Helvetica, Arial, Verdana, Tahoma, sans-serif;
-  letter-spacing: -0.5px;
+  line-height: 1.2;
 }
 
 /* Typography */
-h3 {
+
+h1 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
+  color: var(--color-black);
   margin: 16px 0px;
 }
 
-h4 {
+h2 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+  color: var(--color-black);
   margin: 8px 0;
 }
 
-h5 {
+h3 {
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
+  color: var(--color-black);
   margin: 8px 0;
 }
 
 p {
   font-size: var(--font-regular);
   font-weight: var(--weight-regular);
+  color: var(--color-black);
+  margin: 4px 0;
+}
+
+.hidden, legend, caption {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+  background-color: #fff;
 }
 
 /* Navbar */
@@ -71,7 +85,8 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 16px;
+  color: var(--color-black);
+  padding: 0 16px;
 }
 
 .navbar__menu {
@@ -79,9 +94,13 @@ p {
   font-size: 16px;
 }
 
-h1.logo {
+.navbar__logo {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
+}
+
+.navbar__logo a {
+  color: var(--color-black);
 }
 
 .navbar__menu__item {
@@ -104,13 +123,7 @@ h1.logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
-}
-
-.main__description {
-  font-size: var(--font-medium);
-  font-weight: var(--weight-semi-bold);
-  margin: 8px 0;
+  padding: 40px;
 }
 
 .main__img {
@@ -140,7 +153,7 @@ width: 500px;
 
 /* section common */
 .section {
-  padding: 50px;
+  padding: 40px;
   text-align: center;
   max-width: 1200px;
   margin: 0 auto;
@@ -148,9 +161,6 @@ width: 500px;
 }
 
 /* About */
-.about__description {
-  color: var(--color-dark-grey);
-}
 .about__majors {
   display: flex;
   justify-content: space-between;
@@ -229,54 +239,23 @@ width: 500px;
   margin: 0 auto;
 }
 
-.about_jobs .job {
-  position: relative;
+.job {
+  display: flex;
+  align-items: center;
+}
+
+.job__info {
+  margin: 0 16px;
   text-align: left;
-  padding-left: 20px;
-  margin-bottom: 20px;
-  text-align: left;
 }
 
-.about_jobs li:before {
-  content: "";
-  position: absolute;
-  top: 28px;
-  left: 4px;
-  bottom: -28px;
-  width: 3px;
-  border-radius: 3px;
-  background-color: var(--color-dark-white);
-}
-
-.about_jobs li:after {
-  content: "";
-  position: absolute;
-  top: 12px;
-  left: 0;
-  width: 12px;
-  height: 12px;
-  border-radius: 12px;
-  background-color: var(--color-black);
-}
-
-.about_jobs li.last::before{
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border-radius: 0;
-  background-color: none;
-}
-
-.job__name {
-  font-size: 22px;
-  font-weight: var(--weight-semi-bold);
-  margin-bottom: 20px;
-}
-
+.job__name,
 .job__description,
 .job__period {
   color: var(--color-dark-grey);
+}
+
+
+.job__name {
+
 }

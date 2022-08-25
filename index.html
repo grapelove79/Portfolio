@@ -1,51 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Youngsun's Portfolio</title>
-    <meta name="description" content="영선이의 Portfolio">
-    <meta name="author" content="Youngsun">
-    <link rel="icon" type="image/png" href="imgs/favicon.png">
-    <script src="https://kit.fontawesome.com/d291f2426c.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-</head>
-<body>
-    <!-- Nabar -->
-    <nav id="navbar">
-        <div class="navbar__logo">
-          <i class="fab fa-diaspra"></i>
-            <a href="#">Youngsun</a>
-        </div>
-        <div class="navbar__menu">
-          <ul class="navbar__menu">
-            <li class="navbar__menu__item active">Home</li>
-            <li class="navbar__menu__item">About</li>
-            <li class="navbar__menu__item">Skill</li>
-            <li class="navbar__menu__item">My Work</li>
-            <li class="navbar__menu__item">Contact</li>
-          </ul>
-        </div>
-    </nav>
 
-    <!-- Home -->
-    <section id="home">
-      <img src="imgs/profile.jpeg" alt="Youngsun's profile photo" class="home__avatar">
-      <div class="ball"></div>
-      <div class="ball2"></div>
-      <h1 class="home__title">Hello,<br />I'm Dream Coder</h1>
-      <h2 class="home__description">새로운 가치를 추구하는 웹퍼블리셔</h2>
-      <button class="home__contact">Contact Me</button>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Youngsun's Portfolio</title>
+  <meta name="description" content="영선이의 Portfolio">
+  <meta name="author" content="Youngsun">
+  <link rel="icon" type="image/png" href="imgs/favicon.png">
+  <script src="https://kit.fontawesome.com/d291f2426c.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+  <ul class="skipnav hidden">
+    <li><a href="#gnb" title="주메뉴 바로가기 링크">주메뉴 바로가기</a></li>
+    <li><a href="#main" title="본문 바로가기 링크">본문 바로가기</a></li>
+    <li><a href="#about" title="본문 바로가기 링크">본문 바로가기</a></li>
+    <li><a href="#skills" title="본문 바로가기 링크">본문 바로가기</a></li>
+    <li><a href="#work" title="본문 바로가기 링크">본문 바로가기</a></li>
+    <li><a href="#contact" title="본문 바로가기 링크">본문 바로가기</a></li>
+    <li><a href="#footer" title="푸터 바로가기 링크">푸터 바로가기</a></li>
+  </ul>
+  <!-- Nabar -->
+  <header id="header">
+    <nav id="navbar">
+      <h1 class="logo">
+        <a href="#">Youngsun</a>
+      </h1>
+      <div class="navbar__menu" id="gnb">
+        <h2 class="hidden">메인메뉴</h2>
+        <ul class="navbar__menu">
+          <li class="navbar__menu__item active">Home</li>
+          <li class="navbar__menu__item">About</li>
+          <li class="navbar__menu__item">Skill</li>
+          <li class="navbar__menu__item">My Work</li>
+          <li class="navbar__menu__item">Contact</li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <h2 class="hidden">영성 본문</h2>
+    <!-- Main -->
+    <section id="main">
+      <div class="main__text">
+        <h3 class="main__title">Hello,<br />I'm Dream Coder</h3>
+        <span class="main__description">새로운 가치를 추구하는 웹퍼블리셔</span>
+        <button class="main__contact">Contact Me</button>
+      </div>
+      <div class="main__img">
+        <img src="imgs/profile.png" alt="Youngsun's profile photo" class="main__avatar">
+      </div>
     </section>
 
     <!-- About -->
-    <section id="about">
-      <h1>About Me</h1>
-      <p>웹표준과 웹접근성을 준수한 홈페이지 제작을 할 수 있으며, 반응형의 최적화한 사이트를 제작할 수 있습니다.
-         javascript를 이용해 아코디언, 탭, 스크롤 이벤트 등 동적인 모션을 구현 할 수 있습니다.</p>
+    <section id="about" class="section">
+      <h3>About Me</h3>
+      <p class="about__description">웹표준과 웹접근성을 준수한 홈페이지 제작을 할 수 있으며, 반응형의 최적화한 사이트를 제작할 수 있습니다.
+        javascript를 이용해 아코디언, 탭, 스크롤 이벤트 등 동적인 모션을 구현 할 수 있습니다.</p>
       <div class="about__majors">
         <div class="major">
           <div class="major__icon">
@@ -66,31 +83,50 @@
           <div class="major__title">REACT</div>
         </div>
       </div>
-      <div class="about_jobs">
-        <div class="job">
-          <p class="job__name">토브소프트 콘텐츠개발팀 / 주임</p>
+      <ul class="about_jobs">
+        <li class="job">
+          <strong class="job__name">토브소프트 콘텐츠개발팀 / 주임</strong>
+            <p class="job__description">
+              담당업무: 웹 퍼블리싱<br />
+              교과서기반으로 웹 교육콘텐츠 페이지 제작<br />
+            </p>
+            <p class="job_period">
+              2017. 04. ~ 2021. 12.
+            </p>
+        </li>
+        <li class="job">
+          <strong class="job__name">가이스트코리아 웹디자인팀 / 과장</strong>
           <p class="job__description">
-            담당업무: 웹 퍼블리싱<br/>
-            교과서기반으로 웹 교육콘텐츠 페이지 제작<br/>
+            담당업무: 웹디자인<br />
+            주로 관공서나 공기업을 상대로 웹사이트 프로토타입과 프로젝트 디자인 및 UI/UX 디자인 및 유지보수<br />
           </p>
           <p class="job_period">
             2017. 04. ~ 2021. 12.
           </p>
-        </div>
-      </div>
+        </li>
+        <li class="job last">
+          <strong class="job__name">에버웹 / 주임</strong>
+          <p class="job__description">
+            담당업무: 웹 디자인 및 퍼블리싱<br />
+            HTML5, CSS, Flash, ActionScript 이용하여 프로젝트 개발<br />
+          </p>
+          <p class="job__period">
+            2017. 04. ~ 2021. 12.
+          </p>
+        </li>
+      </ul>
     </section>
 
     <!-- Skills -->
-    <section id="skills">
-      <h1>Skills</h1>
-      <h2>Skills & Attributes</h2>
+    <section id="skills" class="section">
+      <h3>Skills</h3>
       <div class="skillset">
-        <div class='wrap'>
-          <ul class='container'>
+        <div class="skill__wrap">
+          <ul class="skill__container">
             <li>
               <div class="chart doughnut1"><span class="center">95%</span></div>
               <p>HTML5/CSS3</p>
-            </li> 
+            </li>
             <li>
               <div class="chart doughnut2"><span class="center">70%</span></div>
               <p>JavaScript</p>
@@ -104,13 +140,15 @@
               <p>SVN/Git</p>
             </li>
           </ul>
+          <button onClick=replay()>
+            reset버튼
+          </button>
         </div>
       </div>
     </section>
 
     <!-- Work -->
-    <section id="work">
-      <h1>My work</h1>
+    <section id="work" class="section">
       <h3>Projects</h3>
       <ul class="work__categori">
         <li><button class="category__btn">All <span class="category__count">8</span></button></li>
@@ -119,100 +157,100 @@
       </ul>
       <ul>
         <li class="work__projects">
-          <a href="" class="project" target="blank"></a> 
+          <a href="" class="project" target="blank"></a>
           <img src="imgs/projects/donga_ahn_41.png" alt="동아두클래스 초등학교 수학(안병곤)4-1">
           <div class="project__description">
-            <h3>[동아출판]두클래스 초등학교 수학(안병곤)4-1</h3>
+            <h4>[동아출판]두클래스 초등학교 수학(안병곤)4-1</h4>
             <span>HTML5, CSS, JavaScript, SVN</span>
             <span>UI마크업 50%, 수학 프로토타입 개발하였고 사회와 과학은 고객사 검수서 수정 및 페이지 추가 개발, 현재 수사과 전체 가이드 작업</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="" class="project" target="blank"></a> 
+          <a href="" class="project" target="blank"></a>
           <img src="imgs/projects/donga_par_41.png" alt="동아두클래스 초등학교 수학(박교식)4-1">
           <div class="project__description">
-            <h3>[동아출판]두클래스 초등학교 수학(박교식)4-1</h3>
+            <h4>[동아출판]두클래스 초등학교 수학(박교식)4-1</h4>
             <span>HTML5, CSS, JavaScript, SVN</span>
             <span>UI마크업 50%, 수학 프로토타입 개발하였고 사회와 과학은 고객사 검수서 수정 및 페이지 추가 개발, 현재 수사과 전체 가이드 작업</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="https://un.douclass.easypub.kr/#SOC_41" class="project" target="blank"></a> 
+          <a href="https://un.douclass.easypub.kr/#SOC_41" class="project" target="blank"></a>
           <img src="imgs/projects/donga_soc41.png" alt="동아두클래스 초등학교 사회 4학년 1학기">
           <div class="project__description">
-            <h3>[동아출판]두클래스 초등학교 사회 4학년 1학기</h3>
+            <h4>[동아출판]두클래스 초등학교 사회 4학년 1학기</h4>
             <span>HTML5, CSS, JavaScript, SVN</span>
             <span>UI마크업 50%, 수학 프로토타입 개발하였고 사회와 과학은 고객사 검수서 수정 및 페이지 추가 개발, 현재 수사과 전체 가이드 작업</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="https://un.douclass.easypub.kr/#SCI_41" class="project" target="blank"></a> 
+          <a href="https://un.douclass.easypub.kr/#SCI_41" class="project" target="blank"></a>
           <img src="imgs/projects/donga_sci_41.png" alt="동아두클래스 초등학교 과학 4학년 1학기">
           <div class="project__description">
-            <h3>[동아출판]두클래스 초등학교 과학 4학년 1학기</h3>
+            <h4>[동아출판]두클래스 초등학교 과학 4학년 1학기</h4>
             <span>HTML5, CSS, JavaScript, SVN</span>
             <span>UI마크업 50%, 수학 프로토타입 개발하였고 사회와 과학은 고객사 검수서 수정 및 페이지 추가 개발, 현재 수사과 전체 가이드 작업</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="" class="project" target="blank"></a> 
+          <a href="" class="project" target="blank"></a>
           <img src="imgs/projects/m-teacher_12.png" alt="미래엔 엠티쳐 초등학교 수학 1학년 2학기">
           <div class="project__description">
-            <h3>[미래엔] 엠티쳐 초등학교 수학 1학년 2학기 교수학습 콘텐츠 제작</h3>
+            <h4>[미래엔] 엠티쳐 초등학교 수학 1학년 2학기 교수학습 콘텐츠 제작</h4>
             <span>HTML5, CSS, JavaScript, SVN</span>
             <span>UI마크업 40%, UI가 동작되는 부분은 JavaScript 개발 작업</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="http://un.douclass.easypub.kr/#SAF_10" class="project" target="blank"></a> 
+          <a href="http://un.douclass.easypub.kr/#SAF_10" class="project" target="blank"></a>
           <img src="imgs/projects/donga_saf_10.png" alt="동아두클래스 초등학교 안전한 생활 1학년 2학기">
           <div class="project__description">
-            <h3>[동아출판] 두클래스 초등학교 안전한 생활 1학년 2학기 콘텐츠 제작</h3>
-            <span>HTML5, CSS, JavaScript, SVN</span>
-            <span>UI마크업 80%, PL/span>
-          </div>
-        </div>
-        <li class="work__projects">
-          <a href="http://un.douclass.easypub.kr/#SAF_20" class="project" target="blank"></a> 
-          <img src="imgs/projects/donga_saf_20.png" alt="동아두클래스 초등학교 안전한 생활 2학년 2학기">
-          <div class="project__description">
-            <h3>[동아출판] 두클래스 초등학교 안전한 생활 2학년 2학기 콘텐츠 제작</h3>
+            <h4>[동아출판] 두클래스 초등학교 안전한 생활 1학년 2학기 콘텐츠 제작</h4>
             <span>HTML5, CSS, JavaScript, SVN</span>
             <span>UI마크업 80%, PL</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="https://han.gl/CykRS" class="project" target="blank"></a> 
+          <a href="http://un.douclass.easypub.kr/#SAF_20" class="project" target="blank"></a>
+          <img src="imgs/projects/donga_saf_20.png" alt="동아두클래스 초등학교 안전한 생활 2학년 2학기">
+          <div class="project__description">
+            <h4>[동아출판] 두클래스 초등학교 안전한 생활 2학년 2학기 콘텐츠 제작</h4>
+            <span>HTML5, CSS, JavaScript, SVN</span>
+            <span>UI마크업 80%, PL</span>
+          </div>
+        </li>
+        <li class="work__projects">
+          <a href="https://han.gl/CykRS" class="project" target="blank"></a>
           <img src="imgs/projects/dokdo.png" alt="동북아역사재단 독도 초등">
           <div class="project__description">
-            <h3>[동북아역사재단] 독도 콘텐츠 제작 (초등 5~6학년, 초등 3~4학년, 중·고등)</h3>
+            <h4>[동북아역사재단] 독도 콘텐츠 제작 (초등 5~6학년, 초등 3~4학년, 중·고등)</h4>
             <span>HTML5, CSS, JavaScript, SVN</span>
             <span>UI마크업 90%, UI가 동작되는 부분은 JavaScript 개발 작업</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="https://han.gl/JdPVd" class="project" target="blank"></a> 
+          <a href="https://han.gl/JdPVd" class="project" target="blank"></a>
           <img src="imgs/projects/chunjae_lee.png" alt="천재교육 고등 영어(이재영)">
           <div class="project__description">
-            <h3>[천재교육] 고등 영어(이재영) 디지털교과서 제작</h3>
+            <h4>[천재교육] 고등 영어(이재영) 디지털교과서 제작</h4>
             <span>HTML, CSS, javascript, SVN</span>
             <span>UI마크업 80%, PM을 담당하여 고객사와 외주 협력으로 일정/업무 조율, UI동작 되는 부분은 일부 JavaScript개발</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="https://han.gl/Gl36g" class="project" target="blank"></a> 
+          <a href="https://han.gl/Gl36g" class="project" target="blank"></a>
           <img src="imgs/projects/chunjae_kim.png" alt="천재교육 고등 영어(김태영)">
           <div class="project__description">
-            <h3>[천재교육] 고등 영어(김태영) 디지털교과서 제작</h3>
+            <h4>[천재교육] 고등 영어(김태영) 디지털교과서 제작</h4>
             <span>HTML, CSS, javascript, SVN</span>
             <span>페이지 수정 및 추가 페이지 개발</span>
           </div>
         </li>
         <li class="work__projects">
-          <a href="https://tovsoft.com/index.html" class="project" target="blank"></a> 
+          <a href="https://tovsoft.com/index.html" class="project" target="blank"></a>
           <img src="imgs/projects/tovsoft.png" alt="토브소프트 웹사이트 제작">
           <div class="project__description">
-            <h3>[토브소프트] 웹사이트 제작</h3>
+            <h4>[토브소프트] 웹사이트 제작</h4>
             <span>HTML, CSS, javascript, SVN</span>
             <span>UI마크업 50%, 한글페이지를 바탕으로 영문페이지 개발</span>
           </div>
@@ -221,7 +259,7 @@
     </section>
 
     <!-- Testimonials -->
-    <section id="testimonials"></section>
+    <section id="testimonials" class="section"></section>
 
     <!-- Contact -->
     <section id="contact">
@@ -234,14 +272,16 @@
         </a>
       </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer id="footer">
-      <img src="./img/logo.png" alt="로고_이미지">
-      <p>
-        Copyright ⓒ 2022 Kim Youngsun. All Rights Reserved.<br/>
-        본 페이지는 상업적 목적이 아닌 개인 포트폴리용으로 제작되었습니다
-      </p>
-    </footer>
+  <!-- Footer -->
+  <footer id="footer">
+    <img src="./img/logo.png" alt="로고_이미지">
+    <p>
+      Copyright ⓒ 2022 Kim Youngsun. All Rights Reserved.<br />
+      본 페이지는 상업적 목적이 아닌 개인 포트폴리용으로 제작되었습니다
+    </p>
+  </footer>
 </body>
+
 </html>
