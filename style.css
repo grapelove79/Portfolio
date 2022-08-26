@@ -11,7 +11,8 @@
   --color-grey: #616161;
   --color-light-grey: #7c7979;
   --color-blue: #73aace;
-  --color-yellow: #fff7d1;
+  --color-light-yellow: #fff7d1;
+  --color-yellow:#f5b914;
   --color-orange: #feb546;
   --color-black: #000000;
 
@@ -43,10 +44,11 @@ body {
 }
 
 /* Typography */
+
 h3 {
   font-size: var(--font-large);
   font-weight: var(--weight-bold);
-  margin: 16px 0px;
+  margin: 16px 0px 30px 0;
 }
 
 h4 {
@@ -104,7 +106,7 @@ h1.logo {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 50px;
+  padding: 50px 0 0 0;
 }
 
 .main__description {
@@ -114,18 +116,14 @@ h1.logo {
 }
 
 .main__img {
-width: 500px;
+  width: 540px;
+  height: 535px;
 }
 
 .main__avatar {
   width: 100%;
   height: auto;
   /* border-radius: 50%; */
-}
-
-.main__title,
-.main__description {
-  /* color: var(--color-orange); */
 }
 
 .main__contact {
@@ -140,33 +138,42 @@ width: 500px;
 
 /* section common */
 .section {
-  padding: 50px;
+  padding: 40px 0 40px 0;
   text-align: center;
-  max-width: 1200px;
   margin: 0 auto;
-  
+}
+
+.section__container {
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 /* About */
+#about {
+  background-color: var(--color-light-yellow);
+}
+
 .about__description {
   color: var(--color-dark-grey);
 }
+
 .about__majors {
   display: flex;
   justify-content: space-between;
-  margin: 80px 0;
+  margin: 40px 0;
 }
 
 .major__icon {
-  width: 170px;
-  height: 170px;
-  line-height: 170px;
+  width: 150px;
+  height: 150px;
+  line-height: 150px;
   font-size: 70px;
   margin: auto;
-  color:var(--color-blue);
-  border: 1px solid var(--color-blue);
+  color:var(--color-yellow);
+  border: 2px solid var(--color-yellow);
   border-radius: 50%;
   margin-bottom: 16px;
+  background-color: var(--color-white);;
 }
 
 .major__icon i {
@@ -174,7 +181,7 @@ width: 500px;
 }
 
 .major__icon:hover i {
-  color: var(--color-pink);
+  color: var(--color-dark-pink);
   transform: rotate(-30deg) scale(1.1);
 }
 
@@ -187,38 +194,40 @@ width: 500px;
 }
 
 
+/* Skills */
 .skill__wrap {
   position: relative;
-  padding: 2%;
+  padding: 26px 0 26px 0;
 }
 
 .skill__container {
   display: flex;
-  gap: 10px;
+  /* gap: 10px; */
   margin-bottom: 10px;
+  justify-content: space-between;
 }
 
 .chart {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
   transition: 0.3s;
+  margin-bottom: 30px;
 }
 
 .chart span.center {
   background: #fff;
-  
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 40px;
-  height: 40px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   text-align: center;
-  line-height: 40px;
-  font-size: 15px;
-  transform: translate(-50%, -50%); 
+  line-height: 100px;
+  font-size: 25px;
+  transform: translate(-50%, -50%);
 }
 
 .chart button {

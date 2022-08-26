@@ -47,10 +47,10 @@
   <main>
     <h2 class="hidden">영성 본문</h2>
     <!-- Main -->
-    <section id="main">
+    <section id="main" class="section__container">
       <div class="main__text">
         <h3 class="main__title">Hello,<br />I'm Dream Coder</h3>
-        <span class="main__description">새로운 가치를 추구하는 웹퍼블리셔</span>
+        <p class="main__description">새로운 가치를 추구하는 웹퍼블리셔</p>
         <button class="main__contact">Contact Me</button>
       </div>
       <div class="main__img">
@@ -60,72 +60,92 @@
 
     <!-- About -->
     <section id="about" class="section">
-      <h3>About Me</h3>
-      <p class="about__description">웹표준과 웹접근성을 준수한 홈페이지 제작을 할 수 있으며, 반응형의 최적화한 사이트를 제작할 수 있습니다.
-        javascript를 이용해 아코디언, 탭, 스크롤 이벤트 등 동적인 모션을 구현 할 수 있습니다.</p>
-      <div class="about__majors">
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-brands fa-html5"></i>
+      <div class="section__container">
+        <h3>About Me</h3>
+        <p class="about__description">웹표준과 웹접근성을 준수한 홈페이지 제작을 할 수 있으며, 반응형의 최적화한 사이트를 제작할 수 있습니다.<br/>
+          javascript를 이용해 아코디언, 탭, 스크롤 이벤트 등 동적인 모션을 구현 할 수 있습니다.</p>
+        <div class="about__majors">
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-brands fa-html5"></i>
+            </div>
+            <div class="major__title">HTML</div>
           </div>
-          <div class="major__title">HTML/CSS</div>
-        </div>
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-brands fa-js"></i>
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-brands fa-css3-alt"></i>
+            </div>
+            <div class="major__title">CSS3</div>
           </div>
-          <div class="major__title">JavaScript</div>
-        </div>
-        <div class="major">
-          <div class="major__icon">
-            <i class="fa-brands fa-react"></i>
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-brands fa-sass"></i>
+            </div>
+            <div class="major__title">SASS</div>
           </div>
-          <div class="major__title">REACT</div>
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-brands fa-js"></i>
+            </div>
+            <div class="major__title">JavaScript</div>
+          </div>
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-brands fa-figma"></i>
+            </div>
+            <div class="major__title">Figma</div>
+          </div>
+          <div class="major">
+            <div class="major__icon">
+              <i class="fa-brands fa-github"></i>
+            </div>
+            <div class="major__title">GitHub</div>
+          </div>
         </div>
-      </div>
-      <ul class="about_jobs">
-        <li class="job">
-          <strong class="job__name">토브소프트 콘텐츠개발팀 / 주임</strong>
+        <ul class="about_jobs">
+          <li class="job">
+            <strong class="job__name">토브소프트 콘텐츠개발팀 / 주임</strong>
+              <p class="job__description">
+                담당업무: 웹 퍼블리싱<br />
+                교과서기반으로 웹 교육콘텐츠 페이지 제작<br />
+              </p>
+              <p class="job_period">
+                2017. 04. ~ 2021. 12.
+              </p>
+          </li>
+          <li class="job">
+            <strong class="job__name">가이스트코리아 웹디자인팀 / 과장</strong>
             <p class="job__description">
-              담당업무: 웹 퍼블리싱<br />
-              교과서기반으로 웹 교육콘텐츠 페이지 제작<br />
+              담당업무: 웹디자인<br />
+              주로 관공서나 공기업을 상대로 웹사이트 프로토타입과 프로젝트 디자인 및 UI/UX 디자인 및 유지보수<br />
             </p>
             <p class="job_period">
               2017. 04. ~ 2021. 12.
             </p>
-        </li>
-        <li class="job">
-          <strong class="job__name">가이스트코리아 웹디자인팀 / 과장</strong>
-          <p class="job__description">
-            담당업무: 웹디자인<br />
-            주로 관공서나 공기업을 상대로 웹사이트 프로토타입과 프로젝트 디자인 및 UI/UX 디자인 및 유지보수<br />
-          </p>
-          <p class="job_period">
-            2017. 04. ~ 2021. 12.
-          </p>
-        </li>
-        <li class="job last">
-          <strong class="job__name">에버웹 / 주임</strong>
-          <p class="job__description">
-            담당업무: 웹 디자인 및 퍼블리싱<br />
-            HTML5, CSS, Flash, ActionScript 이용하여 프로젝트 개발<br />
-          </p>
-          <p class="job__period">
-            2017. 04. ~ 2021. 12.
-          </p>
-        </li>
-      </ul>
+          </li>
+          <li class="job last">
+            <strong class="job__name">에버웹 / 주임</strong>
+            <p class="job__description">
+              담당업무: 웹 디자인 및 퍼블리싱<br />
+              HTML5, CSS, Flash, ActionScript 이용하여 프로젝트 개발<br />
+            </p>
+            <p class="job__period">
+              2017. 04. ~ 2021. 12.
+            </p>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- Skills -->
-    <section id="skills" class="section">
+    <section id="skills" class="section section__container">
       <h3>Skills</h3>
       <div class="skillset">
         <div class="skill__wrap">
           <ul class="skill__container">
             <li>
               <div class="chart doughnut1"><span class="center">95%</span></div>
-              <p>HTML5/CSS3</p>
+              <p>HTML5 / CSS3</p>
             </li>
             <li>
               <div class="chart doughnut2"><span class="center">70%</span></div>
@@ -133,11 +153,11 @@
             </li>
             <li>
               <div class="chart doughnut3"><span class="center">70%</span></div>
-              <p>Ps/Ai</p>
+              <p>Photoshop / Pigma /<br />Illustrator</p>
             </li>
             <li>
               <div class="chart doughnut4"><span class="center">80%</span></div>
-              <p>SVN/Git</p>
+              <p>SVN / Git</p>
             </li>
           </ul>
           <button onClick=replay()>
