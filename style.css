@@ -416,6 +416,7 @@ h1.logo {
 .contact__right {
   color: var(--color-black);
 }
+
 .contact__links {
   font-size: var(--font-large);
   margin: 24px 0;
