@@ -405,3 +405,30 @@ h1.logo {
   margin-bottom: 8px;
   background-color: var(--color-dark-white);
 }
+
+/* Contact */
+#contact {
+  border-top: 1px solid #E5E5E5;
+}
+
+.contact__title,
+.contact__email,
+.contact__right {
+  color: var(--color-black);
+}
+.contact__links {
+  font-size: var(--font-large);
+  margin: 24px 0;
+  transition: all var(--animation-duratoin) ease-in;
+}
+
+.contact__links i:hover {
+  transform: scale(1.1);
+  color: var(--color-yellow);
+}
+
+/* Footer */
+#footer {
+  background-color: var(--color-light-white);
+}
+
