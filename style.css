@@ -52,7 +52,6 @@ body {
 }
 
 /* Typography */
-
 h4 {
   font-size: var(--font-medium);
   font-weight: var(--weight-semi-bold);
@@ -71,17 +70,29 @@ p {
 }
 
 .section__container {
-  max-width: 1300px;
   margin: 0 auto;
+  max-width: 1300px;
 }
 
 /* Navbar */
+#header {
+  width: 100%;
+  position: fixed;
+  transition: all var(--animation-duratoin) ease-in-out;
+}
+
+#header.header--white {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-light-white);
+}
+
 .header__container {
   position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 72px;
+  background-color: transparent;
 }
 
 .navbar__menu {
@@ -139,11 +150,13 @@ h1.logo {
   display: flex;
   justify-content: space-between;
   align-items: end;
+  padding-top: 73px;
 }
 
 .main__container .main__text {
   padding-bottom: 120px;
 }
+
 .main__container h3 {
   font-size: 74px;
   font-weight: var(--weight-bold);

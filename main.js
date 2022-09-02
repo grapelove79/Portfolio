@@ -7,6 +7,22 @@
 //   docStyle.setProperty('--mouse-x', e.clientX);
 //   docStyle.setProperty('--mouse-y', e.clientY);
 // });
+'use strict'
+
+// header의 배경색을 흰색으로 변경
+const header = document.querySelector('#header');
+const headerHeight = header.getBoundingClientRect().height;
+
+document.addEventListener('scroll', () => {
+  console.log(window.scrollY);
+  console.log('headerHeight:', headerHeight);
+  if(window.scrollY > headerHeight) {
+    header.classList.add('header--white');
+  } else {
+    header.classList.remove('header--white');
+  }
+})
+
 
 const chart1 = document.querySelector('.doughnut1');
 const chart2 = document.querySelector('.doughnut2');
