@@ -45,6 +45,15 @@ window.addEventListener("scroll", () => {
 });
 
 
+// Handle click on Contact Me button on home
+const homeContactBtn = document.querySelector('.home__contact');  
+homeContactBtn.addEventListener('click', () => {
+  const scrollTo = document.querySelector('#contact');
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+});
+
+
+
 
 
 const chart1 = document.querySelector('.doughnut1');
