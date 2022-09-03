@@ -14,14 +14,37 @@ const header = document.querySelector('#header');
 const headerHeight = header.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
-  console.log(window.scrollY);
+  console.log('a', window.scrollY);
   console.log('headerHeight:', headerHeight);
   if(window.scrollY > headerHeight) {
     header.classList.add('header--white');
   } else {
     header.classList.remove('header--white');
   }
-})
+});
+
+// Handle scrolling when tapping on the navbar menu
+const link = document.querySelectorAll('.links');
+const sections = document.querySelectorAll('section');
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  let len = sections.length;
+
+  sections.forEach((section) => {
+    const sectionTop = window.pageYOffset + section.offsetTop;
+    const sectionHeight = section.clientHeight;
+    if (window.pageYOffset >= sectionTop - sectionHeight / 4) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  while(--len && window.scrollY + 72 < sections[len].offsetTop) {}
+  link.forEach(ltx => ltx.classList.remove('active'));
+  link[len].classList.add('active');
+});
+
+
 
 
 const chart1 = document.querySelector('.doughnut1');

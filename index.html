@@ -33,53 +33,55 @@
         <h1 class="logo">
           <a href="#">Youngsun</a>
         </h1>
-        <nav class="navbar__content" id="gnb">
+        <nav id="gnb" class="navbar__contents">
           <h2 class="hidden">메인메뉴</h2>
           <ul class="navbar__menu">
-            <li class="navbar__menu__item active">
-              <a href="">Home</a>
+            <li class="links">
+              <a href="#main" class="navbar__menu__item">Home</a>
             </li>
-            <li class="navbar__menu__item">
-              <a href="">About</a>
+            <li class="links">
+              <a href="#about" class="navbar__menu__item">About</a>
             </li>
-            <li class="navbar__menu__item">
-              <a href="">Skill</a>
+            <li class="links">
+              <a href="#skills" class="navbar__menu__item">Skills</a>
             </li>
-            <li class="navbar__menu__item">
-              <a href="">My Work</a>
+            <li class="links">
+              <a href="#work" class="navbar__menu__item">My Work</a>
             </li>
-            <li class="navbar__menu__item">
-              <a href="">Contact</a>
+            <li class="links">
+              <a href="#contact" class="navbar__menu__item">Contact</a>
             </li>
           </ul>
         </nav>
-  
+
         <!-- Toggle button -->
         <button class="navbar__toggle-btn">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </header>
-  
+
     <!-- Main -->
-    <main  id="main">
+    <main id="main">
       <h2 class="hidden">Youngsun 본문</h2>
-      <section class="main__container section__container">
-        <div class="main__text">
-          <h3 class="main__title">Hello,<br />I'm Dream Coder</h3>
-          <p class="main__description">새로운 가치를 추구하는 웹퍼블리셔</p>
-          <button class="main__contact">Contact Me</button>
-        </div>
-        <div class="main__img">
-          <img src="imgs/profile.png" alt="Youngsun's profile photo" class="main__avatar">
-        </div>
+      <section id="home">
+       <div class="main__container section__container">
+          <div class="main__text">
+            <h3 class="main__title">Hello,<br />I'm Dream Coder</h3>
+            <p class="main__description">새로운 가치를 추구하는 웹퍼블리셔</p>
+            <button class="main__contact">Contact Me</button>
+          </div>
+          <div class="main__img">
+            <img src="imgs/profile.png" alt="Youngsun's profile photo" class="main__avatar">
+          </div>
+       </div>
       </section>
-  
+
       <!-- About -->
       <section id="about" class="section">
         <div class="about__container section__container">
           <h3>About Me</h3>
-          <p class="about__description">웹표준과 웹접근성을 준수한 홈페이지 제작을 할 수 있으며, 반응형의 최적화한 사이트를 제작할 수 있습니다.<br/>
+          <p class="about__description">웹표준과 웹접근성을 준수한 홈페이지 제작을 할 수 있으며, 반응형의 최적화한 사이트를 제작할 수 있습니다.<br />
             javascript를 이용해 아코디언, 탭, 스크롤 이벤트 등 동적인 모션을 구현 할 수 있습니다.</p>
           <div class="about__majors">
             <div class="major">
@@ -122,13 +124,13 @@
           <ul class="about_jobs">
             <li class="job">
               <strong class="job__name">토브소프트 콘텐츠개발팀 / 주임</strong>
-                <p class="job__description">
-                  담당업무: 웹 퍼블리싱<br />
-                  교과서기반으로 웹 교육콘텐츠 페이지 제작<br />
-                </p>
-                <p class="job_period">
-                  2017. 04. ~ 2021. 12.
-                </p>
+              <p class="job__description">
+                담당업무: 웹 퍼블리싱<br />
+                교과서기반으로 웹 교육콘텐츠 페이지 제작<br />
+              </p>
+              <p class="job_period">
+                2017. 04. ~ 2021. 12.
+              </p>
             </li>
             <li class="job">
               <strong class="job__name">가이스트코리아 웹디자인팀 / 과장</strong>
@@ -153,7 +155,7 @@
           </ul>
         </div>
       </section>
-  
+
       <!-- Skills -->
       <section id="skills" class="section">
         <div class="skills__container section__container">
@@ -183,7 +185,7 @@
           </div>
         </div>
       </section>
-  
+
       <!-- Work -->
       <section id="work" class="section">
         <div class="work__container section__container">
@@ -196,12 +198,12 @@
               <button class="category__btn">교육컨텐츠 <span class="category__count">8</span></button>
             </li>
             <li>
-              <button class="category__btn" >홈페이지 <span class="category__count">1</span></button>
+              <button class="category__btn">홈페이지 <span class="category__count">1</span></button>
             </li>
           </ul>
           <div class="work__contents">
             <ul class="work__projects">
-              <li >
+              <li>
                 <a href="" class="project" target="blank">
                   <img src="imgs/projects/donga_ahn_41.png" class="project__img" alt="동아두클래스 초등학교 수학(안병곤)4학원 1학기">
                   <div class="project__description">
@@ -309,16 +311,16 @@
                       페이지 수정 및 추가 페이지 제작
                     </p>
                   </div>
-              </a>
+                </a>
               </li>
               <li>
                 <a href="https://tovsoft.com/index.html" class="project" target="blank">
-                  <img src="imgs/projects/tovsoft.png"  class="project__img" alt="토브소프트 웹사이트 제작">
+                  <img src="imgs/projects/tovsoft.png" class="project__img" alt="토브소프트 웹사이트 제작">
                   <div class="project__description">
                     <h5 class="project__title">[토브소프트] 웹사이트 제작</h5>
                     <p class="project__sub">
                       UI마크업 50%, 한글페이지를 바탕으로 영문페이지 제작
-                    </p> 
+                    </p>
                   </div>
                 </a>
               </li>
@@ -326,10 +328,10 @@
           </div>
         </div>
       </section>
-  
+
       <!-- Contact -->
       <section id="contact" class="section">
-        <div class="contact__container">
+        <div class="contact__container section__container">
           <h3 class="contact__title">Contact Me</h3>
           <h4 class="contact__email">grapelove79@gmail.com</h4>
           <h5 class="contact__phone"><a href="tel:010.8924.6883">010.8924.6883</a></h5>
@@ -341,15 +343,15 @@
         </div>
       </section>
     </main>
-  
+
     <!-- Footer -->
     <footer id="footer">
-     <div class="footer__container">
+      <div class="footer__container">
         <p class="copyright">
           Copyright ⓒ 2022 Youngsun. All Rights Reserved.<br />
           본 페이지는 상업적 목적이 아닌 개인 포트폴리용으로 제작되었습니다
         </p>
-     </div>
+      </div>
     </footer>
   </div>
 </body>
