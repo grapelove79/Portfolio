@@ -377,13 +377,13 @@ section {
   font-weight: 500;
 }
 
-.category__btn.active,
+.category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-yellow);
   color: var(--color-black);
 }
 
-.category__btn.active .cagegory__count,
+.category__btn.selected .cagegory__count,
 .category__btn:hover .category__count {
   opacity: 1;
   top: 0;
