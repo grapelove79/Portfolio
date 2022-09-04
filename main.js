@@ -26,6 +26,8 @@ document.addEventListener('scroll', () => {
 // Handle scrolling when tapping on the navbar menu
 const link = document.querySelectorAll('.links');
 const sections = document.querySelectorAll('section');
+const navbar = document.querySelector('.header__container');
+
 
 window.addEventListener("scroll", () => {
   let current = "";
@@ -38,11 +40,38 @@ window.addEventListener("scroll", () => {
       current = section.getAttribute("id");
     }
   });
-
+  
   while(--len && window.scrollY + 72 < sections[len].offsetTop) {}
-  link.forEach(ltx => ltx.classList.remove('active'));
+  link.forEach((ltx) => {ltx.classList.remove('active')});
   link[len].classList.add('active');
+  
+  navbar.classList.remove('open');
 });
+
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+const navbarCloseBtn = document.querySelector('.navbar__close-btn');
+const logo = document.querySelector('.logo');
+const firstNav = document.querySelector('.links [href="#main"]');
+
+navbarToggleBtn.addEventListener('click', () => {
+  navbar.classList.toggle('open');
+});
+navbarCloseBtn.addEventListener('click', () => {
+  navbar.classList.remove('open');
+});
+logo.addEventListener('click', () => {
+  if(navbar.classList.contains('open')) {
+    navbar.classList.remove('open');
+  }
+});
+firstNav.addEventListener('click', () => {
+  if(navbar.classList.contains('open')) {
+    navbar.classList.remove('open');
+  }
+})
+
 
 
 // Handle click on Contact Me button on home

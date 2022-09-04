@@ -36,7 +36,7 @@
         <nav id="gnb" class="navbar__contents">
           <h2 class="hidden">메인메뉴</h2>
           <ul class="navbar__menu">
-            <li class="links">
+            <li class="links active">
               <a href="#main" class="navbar__menu__item">Home</a>
             </li>
             <li class="links">
@@ -57,6 +57,9 @@
         <!-- Toggle button -->
         <button class="navbar__toggle-btn">
           <i class="fas fa-bars"></i>
+        </button>
+        <button class="navbar__close-btn">
+          <i class="fa-solid fa-xmark"></i>
         </button>
       </div>
     </header>
@@ -189,10 +192,10 @@
       <!-- Work -->
       <section id="work" class="section">
         <div class="work__container section__container">
-          <h3>Projects</h3>
+          <h3>My work</h3>
           <ul class="work__categoris">
             <li>
-              <button class="category__btn" data-filter="*">All <span class="category__count">9</span></button>
+              <button class="category__btn selected" data-filter="*">All <span class="category__count">9</span></button>
             </li>
             <li>
               <button class="category__btn" data-filter="contents">교육컨텐츠 <span class="category__count">8</span></button>
@@ -333,7 +336,9 @@
       <section id="contact" class="section">
         <div class="contact__container section__container">
           <h3 class="contact__title">Contact Me</h3>
-          <h4 class="contact__email">grapelove79@gmail.com</h4>
+          <p>끝까지 봐주셔서 감사합니다.<br/>
+             팀에 스며드는 다채로운 일원이 되겠습니다!</p>
+          <h4 class="contact__email"><a href="mailto:grapelove79@gmail.com">grapelove79@gmail.com</a></h4>
           <h5 class="contact__phone"><a href="tel:010.8924.6883">010.8924.6883</a></h5>
           <div class="contact__links">
             <a href="https://github.com/grapelove79" target="blank">
@@ -356,6 +361,7 @@
 
     <!-- Arrow up -->
     <button class="arrow__up">
+      <span class="hidden">맨 위로 이동</span>
       <i class="fas fa-arrow-up"></i>
     </button>
   </div>

@@ -136,16 +136,25 @@ h1.logo {
 
 .links.active .navbar__menu__item:hover::after,
 .navbar__menu__item:hover::after {
-    left: 0;
-    right: 0;
+  left: 0;
+  right: 0;
+}
+
+.header__container [class$="-btn"] {
+  position: absolute;
+  top: 24px;
+  color: var(--color-black);
 }
 
 .navbar__toggle-btn {
-  position: absolute;
-  top: 24px;
-  right: 0;
   font-size: 27px;
-  color: var(--color-black);
+  right: 0;
+  display: none;
+}
+
+.navbar__close-btn  {
+  font-size: 30px;
+  right: 0;
   display: none;
 }
 
@@ -439,7 +448,6 @@ section {
 }
 
 .work__projects li:hover {
-  opacity: 0.8;
   transform: translateY(0px);
   box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 20%);
 } 
@@ -477,6 +485,7 @@ section {
   -webkit-line-clamp: 2;
   word-break: keep-all;
 }
+
 .project__sub {
   margin: 0 24px 24px;
   font-size: 15px;
@@ -510,15 +519,16 @@ section {
 
 
 /* Contact */
-#contact {
-  /* border-top: 1px solid #E5E5E5; */
+.contact__container p {
+  padding: 30px 0 50px 0;
+  font-size: 26px;
 }
 
-.contact__title,
+/* .contact__title,
 .contact__email,
 .contact__right {
   color: var(--color-black);
-}
+} */
 
 .contact__links {
   font-size: var(--font-large);
@@ -557,13 +567,17 @@ section {
   right: 20px;
   width: 50px;
   height: 50px;
-  font-size: 50px;
-  color: var(--color-black);
-  background-color: var(--color-yellow);
+  font-size: 25px;
+  color: var(--color-white);
+  background-color: var(--color-black);
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
   transition: all 300ms ease-in;
+}
+
+.arrow__up:hover {
+  background-color: var(--color-yellow);
 }
 
 .arrow__up.visible{
@@ -617,16 +631,15 @@ section {
     letter-spacing: -0.5px;
     word-break: keep-all;
   }
-
 }
-/* For below 1023px screen width */
 
+/* For below 1023px screen width */
 @media screen and (max-width: 1023px) {
   h1.logo {
     padding-top: 16px;
   }
 
-  .navbar__toggle-btn {
+  /* .navbar__toggle-btn {
     display: block;
   }
 
@@ -659,8 +672,84 @@ section {
     bottom: 0; 
     background: var(--color-yellow);
     height: 1px;
-    /* transition: all var(--animation-duratoin) ease-in-out; */
+  } */
+
+  .header__container.open h1.logo{
+    z-index: 4;
   }
+  
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  .header__container.open .navbar__close-btn {
+    display: block;
+    z-index: 3;
+  }
+
+  .navbar__content {
+    width: 100%;
+    background-color: var(--color-white);
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .header__container.open .navbar__menu  { 
+    display: block;
+    position: fixed;
+    /* overflow: hidden;
+    overflow-y: scroll; */
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 120px 15px 27px;
+    background: #fff;
+    opacity: 0.98;
+    box-sizing: border-box;
+  }
+
+  .navbar__menu__item {
+    position: relative;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: var(--weight-semi-bold);
+    z-index: 1;
+  }
+
+  .navbar__menu__item::after { 
+    content: ""; 
+    position: absolute; 
+    left: 50%; 
+    right: 50%; 
+    bottom: 10px; 
+    background: var(--color-yellow);
+    height: 5px;
+    transition: all var(--animation-duratoin) ease-in-out;
+    z-index: -1; 
+  }
+
+  .links.active .navbar__menu__item::after {
+    left: 0;
+    right: 0;
+    bottom: 10px;
+  }
+
+  .links.active .navbar__menu__item:hover::after,
+  .navbar__menu__item:hover::after {
+      left: 0;
+      right: 0;
+      bottom: 10px;
+  }
+
+
+
 
   .section__container {
     max-width: 676px;
@@ -735,38 +824,23 @@ section {
     padding-top: 16px;
   }
 
+
   .navbar__toggle-btn {
     display: block;
     right: 24px;
   }
 
-  .navbar__content {
-    width: 100%;
+  .header__container.open .navbar__close-btn {
+    display: block;
+    right: 24px;
+    z-index: 3;
   }
 
-  .navbar__menu {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    display: none;
-  }
 
-  .navbar__menu__item {
-    position: relative;
-    display: inline-block;
-    z-index: 1;
-  }
 
-  .navbar__menu__item::after { 
-    content: ""; 
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    background: var(--color-yellow);
-    height: 1px;
-    /* transition: all var(--animation-duratoin) ease-in-out; */
-  }
+
+
+
 
   .home__container {
     flex-direction: column;
