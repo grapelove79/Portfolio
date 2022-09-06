@@ -130,7 +130,7 @@ h1.logo {
   right: 50%; bottom: 0; 
   background: var(--color-yellow);
   height: 5px;
-  transition: all var(--animation-duratoin) ease-in-out;
+  transition: all 0.3s ease-out;
   z-index: -1; 
 }
 
@@ -522,6 +522,40 @@ section {
   opacity: 1;
   pointer-events: auto;
 }
+
+
+/* info */
+.paraScroll {
+  position: fixed;
+  left: 20px;
+  bottom: 20px;
+  z-index: 1000;
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 12px;
+  padding: 0px 20px;
+}
+.paraInfo {
+  position: fixed;
+  left: 20px;
+  bottom: 70px;
+  z-index: 1000;
+  background: rgba(0,0,0,.4);
+  color: #fff;
+  padding: 20px;
+  font-size: 12px;
+  line-height: 1.8;
+  border-radius: 10px;
+}
+.paraInfo li {
+  list-style: none;
+}
+
+
 
 /* For below 1320px screen width */
 @media (max-width: 1320px) {

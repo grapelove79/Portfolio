@@ -3,6 +3,7 @@
 var isScoreDrawStarted = false
 
 function startSkills(){
+  isScoreDrawStarted = true	
 	makeChart(80, chart1, '#f5b914');
   makeChart(40, chart2, '#0A174E');
   makeChart(60, chart3, '#66d2ce');
@@ -13,14 +14,11 @@ window.addEventListener('load', () => {
   startSkills();
 });
 
-
 // header의 배경색을 흰색으로 변경
 const header = document.querySelector('#header');
 const headerHeight = header.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
-  console.log('a', window.scrollY);
-  console.log('headerHeight:', headerHeight);
   if(window.scrollY > headerHeight) {
     header.classList.add('header--white');
   } else {
@@ -33,73 +31,55 @@ const link = document.querySelectorAll('.links');
 const sections = document.querySelectorAll('section');
 const navbar = document.querySelector('.header__container');
 
-window.addEventListener("scroll", () => {
-  let current = "";
+// 메뉴 클릭시
+document.querySelectorAll(".paraNav ul li a").forEach( li => {
+  li.addEventListener("click", e => {
+      e.preventDefault();
+      document.querySelector(li.getAttribute("href")).scrollIntoView({
+          behavior: "smooth"
+      });
+  });
+});
+
+
+window.addEventListener("scroll", () => { 
   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-  // let len = sections.length;
-  
-
-  sections.forEach((section) => {
-    const sectionTop = scrollTop - section.offsetTop;
-    const sectionHeight = section.clientHeight;
-    console('1:', offset1)
-    const offset1 = scrollTop - sections[1].offsetTop;
-		const offset2=  scrollTop - sections[2].offsetTop;
-    
-    if(scrollTop > offset1 && scrollTop < offset2) {
-      if(!isScoreDrawStarted) {
-        startSkills();	
-      }else {
-        isScoreDrawStarted = false;
-      }
-    }
-
-  //   function scrollMenu(){
-  //     document.querySelectorAll(".paraNav ul li a").forEach(elem => {
-  //         elem.addEventListener("click", (e) => {
-  //             e.preventDefault();
-  //             document.querySelector(elem.getAttribute("href")).scrollIntoView({
-  //                 behavior: "smooth"
-  //             })
-  //         })
-  //     });
-  // }
-
-    
-    if (scrollTop >= sectionTop - sectionHeight / 3) {
-      current = section.getAttribute("id");
-    }
-
-
-  //   document.querySelectorAll(".content__item").forEach(item => {
-  //     let offset1 = (scrollTop - item.offsetTop) * 0.1;
-  //     let offset2 = (scrollTop - item.offsetTop) * 0.05;
-
-  //     item.querySelector(".content__item__img").style.transform = "translateX("+ offset1 +"px)";
-  //     item.querySelector(".content__item__desc").style.transform = "translateX("+ -offset2 +"px)";
-  //     item.querySelector(".content__item__num").style.transform = "translateY("+ offset1 +"px)";
-  // });
-    });
-  
-  //메뉴
-  document.querySelectorAll(".sections").forEach((item, index) => {
-      if( scrollTop >= item.offsetTop - 2){
-          link.forEach(li => {
+ 
+  // 메뉴 활성화
+  sections.forEach((element, index) => {
+      if( scrollTop + 72 >= element.offsetTop - 2 ){
+        link.forEach(li => {
               li.classList.remove("active");
-          })
-          document.querySelector(".link:nth-child("+(index+1)+")").classList.add("active");
+          });
+          document.querySelector(".navbar__menu li:nth-child("+(index+1)+")").classList.add("active");
       }
-  })
+  });
 
-  // while(--len && window.scrollY + 72 < sections[len].offsetTop) {}
-  // link.forEach((ltx) => {ltx.classList.remove('active')});
-  // link[len].classList.add('active');
+  //Skill
+  if(scrollTop + 72 > sections[2].offsetTop && scrollTop + 72 < sections[3].offsetTop){
+    // startSkills();
+    if (!isScoreDrawStarted){
+      startSkills();
+        }
+  }else{
+    isScoreDrawStarted = false;
+  }		
 
+  // function link() {
+  //   let len = sections.length;
+
+  //   while(--len && scrollTop + 72 < sections[len].offsetTop) {}
+  //   link.forEach((ltx) => {ltx.classList.remove('active')});
+  //   link[len].classList.add('active');
+  // }
+  //  link();
+
+  
   navbar.classList.remove('open');
+
 
   //스크롤 탑 수치 표기
   // document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
-
 });
 
 
@@ -200,7 +180,6 @@ const makeChart = (percent, classname, color) => {
   let classN = classname.classList[1];
   clearInterval(chartFn[classN]);
   chartFn[classN] = setInterval(function() {
-    console.log('i:', i);
     if (i < percent) {
       colorFn(i, classname, color);
       i++;
@@ -215,14 +194,6 @@ const colorFn = (i, classname, color) => {
   classname.style.background = "conic-gradient(" + color + " 0% " + i + "%, #dedede " + i + "% 100%)";
 }
 
-// const replay = () => {
-//   makeChart(80, chart1, '#f5b914');
-//   makeChart(40, chart2, '#0A174E');
-//   makeChart(60, chart3, '#66d2ce');
-//   makeChart(60, chart4, '#dd8acb');
-// }
-
-
 makeChart(80, chart1, '#f5b914');
 makeChart(40, chart2, '#0A174E');
 makeChart(60, chart3, '#66d2ce');
@@ -234,3 +205,4 @@ function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
 }
+
