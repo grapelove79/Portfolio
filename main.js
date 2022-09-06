@@ -1,5 +1,7 @@
 'use strict'
 
+var isScoreDrawStarted = false
+
 function startSkills(){
 	makeChart(80, chart1, '#f5b914');
   makeChart(40, chart2, '#0A174E');
@@ -30,25 +32,73 @@ document.addEventListener('scroll', () => {
 const link = document.querySelectorAll('.links');
 const sections = document.querySelectorAll('section');
 const navbar = document.querySelector('.header__container');
+
 window.addEventListener("scroll", () => {
   let current = "";
-  let len = sections.length;
+  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+  // let len = sections.length;
+  
 
   sections.forEach((section) => {
-    const sectionTop = window.pageYOffset + section.offsetTop;
+    const sectionTop = scrollTop - section.offsetTop;
     const sectionHeight = section.clientHeight;
-    const scrollTop = window.scrollTop;
-    if (window.pageYOffset >= sectionTop - sectionHeight / 3) {
+    console('1:', offset1)
+    const offset1 = scrollTop - sections[1].offsetTop;
+		const offset2=  scrollTop - sections[2].offsetTop;
+    
+    if(scrollTop > offset1 && scrollTop < offset2) {
+      if(!isScoreDrawStarted) {
+        startSkills();	
+      }else {
+        isScoreDrawStarted = false;
+      }
+    }
+
+  //   function scrollMenu(){
+  //     document.querySelectorAll(".paraNav ul li a").forEach(elem => {
+  //         elem.addEventListener("click", (e) => {
+  //             e.preventDefault();
+  //             document.querySelector(elem.getAttribute("href")).scrollIntoView({
+  //                 behavior: "smooth"
+  //             })
+  //         })
+  //     });
+  // }
+
+    
+    if (scrollTop >= sectionTop - sectionHeight / 3) {
       current = section.getAttribute("id");
     }
-  });
+
+
+  //   document.querySelectorAll(".content__item").forEach(item => {
+  //     let offset1 = (scrollTop - item.offsetTop) * 0.1;
+  //     let offset2 = (scrollTop - item.offsetTop) * 0.05;
+
+  //     item.querySelector(".content__item__img").style.transform = "translateX("+ offset1 +"px)";
+  //     item.querySelector(".content__item__desc").style.transform = "translateX("+ -offset2 +"px)";
+  //     item.querySelector(".content__item__num").style.transform = "translateY("+ offset1 +"px)";
+  // });
+    });
   
-  while(--len && window.scrollY + 72 < sections[len].offsetTop) {}
-  link.forEach((ltx) => {ltx.classList.remove('active')});
-  link[len].classList.add('active');
+  //메뉴
+  document.querySelectorAll(".sections").forEach((item, index) => {
+      if( scrollTop >= item.offsetTop - 2){
+          link.forEach(li => {
+              li.classList.remove("active");
+          })
+          document.querySelector(".link:nth-child("+(index+1)+")").classList.add("active");
+      }
+  })
+
+  // while(--len && window.scrollY + 72 < sections[len].offsetTop) {}
+  // link.forEach((ltx) => {ltx.classList.remove('active')});
+  // link[len].classList.add('active');
+
   navbar.classList.remove('open');
 
-  startSkills();	
+  //스크롤 탑 수치 표기
+  // document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
 
 });
 

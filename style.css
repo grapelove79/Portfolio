@@ -190,7 +190,6 @@ h1.logo {
 .home__avatar {
   width: 100%;
   height: auto;
-  /* border-radius: 50%; */
 }
 
 .home__contact {
@@ -224,7 +223,6 @@ section {
 
 .about__majors {
   display: flex;
-  /* max-width: 1100px; */
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 40px auto;
@@ -258,51 +256,6 @@ section {
 
 .major__description {
   font-size: var(--font-small);
-}
-
-
-/* Skills */
-.skill__wrap {
-  position: relative;
-  padding: 26px 0 26px 0;
-}
-
-.skill__container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: space-between;
-}
-
-.chart {
-  position: relative;
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  transition: 0.3s;
-  margin-bottom: 20px;
-}
-
-.chart span.center {
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 110px;
-  font-size: 25px;
-  transform: translate(-50%, -50%);
-}
-
-.chart button {
-  width: 80px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
 }
 
 .about_jobs .job {
@@ -361,6 +314,42 @@ section {
   color: var(--color-dark-grey);
 }
 
+/* Skills */
+.skill__wrap {
+  position: relative;
+  padding: 26px 0 26px 0;
+}
+
+.skill__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.chart {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+.chart span.center {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 110px;
+  font-size: 25px;
+  transform: translate(-50%, -50%);
+}
+
 /* Work */
 #work {
   background-color: var(--color-bright-white);
@@ -392,27 +381,6 @@ section {
   color: var(--color-black);
 }
 
-/* .category__btn.selected .category__count,
-.category__btn:hover .category__count {
-  opacity: 1;
-  top: 0;
-} */
-
-/* .category__count {
-  background-color: var(--color-black);
-  border-radius: 50%;
-  color: var(--color-white);
-  width: 24px;
-  height: 24px;
-  line-height: 24px;
-  display: inline-block;
-  position: relative;
-  top: -20px;
-  left: 4px;
-  opacity: 0;
-  transition: all var(--animation-duratoin) ease-in;
-} */
-
 .work__contents {
   margin: 0 -15px;
 }
@@ -443,7 +411,6 @@ section {
   text-align: left;
   transform: translateY(10px);
   transition: all var(--animation-duratoin) ease-in;
-  /* margin-top: 30px; */
   margin: 15px;
 }
 
@@ -495,40 +462,11 @@ section {
   color: var(--color-grey);
 }
 
-/* .project__description {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--color-white);
-  background-color: black;
-  opacity: 0;
-  padding: 16px 24px 0;
-  box-sizing: border-box;
-  transform: translateY(10px);
-  transition: all var(--animation-duratoin) ease-in;
-}
-
-.project:hover .project__description {
-  opacity: 0.8;
-  transform: translateY(0px);
-} */
-
-
 /* Contact */
 .contact__container p {
   padding: 30px 0 50px 0;
   font-size: 26px;
 }
-
-/* .contact__title,
-.contact__email,
-.contact__right {
-  color: var(--color-black);
-} */
 
 .contact__links {
   font-size: var(--font-large);
@@ -639,41 +577,6 @@ section {
     padding-top: 16px;
   }
 
-  /* .navbar__toggle-btn {
-    display: block;
-  }
-
-  .header__container {
-    flex-direction: column;
-  }
-
-  .navbar__content {
-    width: 100%;
-  }
-
-  .navbar__menu {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    display: none;
-  }
-
-  .navbar__menu__item {
-    position: relative;
-    display: inline-block;
-    z-index: 1;
-  }
-
-  .navbar__menu__item::after { 
-    content: ""; 
-    position: absolute; 
-    left: 0; 
-    right: 0; 
-    bottom: 0; 
-    background: var(--color-yellow);
-    height: 1px;
-  } */
-
   .header__container.open h1.logo{
     z-index: 4;
   }
@@ -702,8 +605,6 @@ section {
   .header__container.open .navbar__menu  { 
     display: block;
     position: fixed;
-    /* overflow: hidden;
-    overflow-y: scroll; */
     z-index: 3;
     top: 0;
     left: 0;
@@ -856,10 +757,6 @@ section {
   .about__majors {
     justify-content: center;
     gap: 20px;
-  }
-
-  .major {
-    /* margin-bottom: 20px; */
   }
 
   .major__icon {
