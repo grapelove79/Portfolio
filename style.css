@@ -789,7 +789,12 @@ section {
   }
 
   .about__majors {
+    -webkit-justify-content: center;
     justify-content: center;
+    -ms-gap: 5vw;
+    -webkit-gap: 5vw;
+    -moz-gap: 5vw;
+    -o-gap: 5vw;
     gap: 5vw;
   }
 
