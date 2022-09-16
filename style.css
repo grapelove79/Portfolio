@@ -224,7 +224,7 @@ section {
 .about__majors {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   margin: 40px auto;
 }
 
@@ -704,6 +704,10 @@ section {
   .home__img {
     padding-top: 43px;
   }
+  
+  .about__majors {
+    justify-content: space-around;
+  }
 
   .major__icon {
     width: 11vw;
@@ -795,7 +799,11 @@ section {
 
   .about__majors {
     justify-content: center;
-    gap: 5vw;
+    /* gap: 5vw; */
+  }
+
+  .about__majors li {
+    width: 30%;
   }
 
   .major__icon {
@@ -804,6 +812,7 @@ section {
     height: 22vw;
     line-height: 22vw;
     font-size: 12vw;
+    padding: 2vw;
   }
 
   .major__title {
