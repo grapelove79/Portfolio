@@ -795,9 +795,10 @@ section {
 
   .major__icon {
     margin-bottom: 10px;
-    width: 22vw;
-    height: 22vw;
-    line-height: 22vw;
+    width: 20vw;
+    height: 20vw;
+    line-height: 20vw;
+    font-size: 11vw;
   }
 
   .major__title {
@@ -886,3 +887,6 @@ section {
 }
 
 
+@media (max-width: 479px) {
+  
+}
