@@ -595,7 +595,6 @@ section {
   }
   
   .project__title {
-    height: 58px;
     overflow: hidden;
   }
 
@@ -870,7 +869,7 @@ section {
 
   .work__projects li {
     width: 100%;
-    max-height: auto;
+    max-height: fit-content;
   }
 
   .project__img {
@@ -879,8 +878,7 @@ section {
 
   .project__description h5 {
     font-size: var(--font-regular);
-    height: 55px;
-    font-weight: 600px;
+    font-weight: 600;
   }
 
   .contact__container p {
