@@ -364,20 +364,20 @@ section {
 }
  
 .category__btn {
-  border-radius: var(--size-border-raius);
   font-size: 17px;
   padding: 0 20px;
   height: 44px;
   line-height: 44px;
-  background-color: var(--color-deep-white);
-  box-sizing: border-box;
   font-weight: 500;
+  box-sizing: border-box;
+  color: var(--color-black);
+  border-radius: var(--size-border-raius);
+  background-color: var(--color-deep-white);
 }
 
 .category__btn.selected,
 .category__btn:hover {
   background-color: var(--color-yellow);
-  color: var(--color-black);
 }
 
 .work__contents {
