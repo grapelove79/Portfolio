@@ -704,8 +704,9 @@ section {
     padding-top: 43px;
   }
 
-  .about__majors li {
-    padding: 2vw;
+  .about__majors {
+    justify-content: center;
+    gap: 5vw;
   }
 
   .major__icon {
@@ -792,10 +793,6 @@ section {
     font-size: var(--font-small);
   }
 
-  .about__majors {
-    justify-content: center;
-  }
-
   .major__icon {
     margin-bottom: 10px;
     width: 22vw;
@@ -827,7 +824,7 @@ section {
     text-align: center;
   }
 
- .chart {
+  .chart {
     width: 42vw;
     height: 42vw;
     margin: 0 auto;
