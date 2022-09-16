@@ -790,7 +790,7 @@ section {
 
   .about__majors {
     justify-content: center;
-    gap: 20px;
+    gap: 5vw;
   }
 
   .major__icon {
@@ -798,6 +798,7 @@ section {
     width: 22vw;
     height: 22vw;
     line-height: 22vw;
+    font-size: 12vw;
   }
 
   .major__title {
