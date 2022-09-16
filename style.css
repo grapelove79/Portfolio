@@ -704,6 +704,10 @@ section {
     padding-top: 43px;
   }
 
+  .about__majors li {
+    padding: 2vw;
+  }
+
   .major__icon {
     width: 98px;
     height: 98px;
@@ -791,11 +795,6 @@ section {
   .about__majors {
     justify-content: center;
   }
-
-  .about__majors li {
-    padding: 2vw;
-  }
-
 
   .major__icon {
     margin-bottom: 10px;
