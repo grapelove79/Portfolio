@@ -26,12 +26,12 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// Handle scrolling when tapping on the navbar menu
+// 스크롤할 때 메뉴와 활성화
 const link = document.querySelectorAll('.links');
 const sections = document.querySelectorAll('section');
 const navbar = document.querySelector('.header__container');
 
-// 메뉴 클릭시
+// 메뉴 클릭시 스무스하게
 document.querySelectorAll(".paraNav ul li a").forEach( li => {
   li.addEventListener("click", e => {
       e.preventDefault();
@@ -65,16 +65,6 @@ window.addEventListener("scroll", () => {
     isScoreDrawStarted = false;
   }		
 
-  // function link() {
-  //   let len = sections.length;
-
-  //   while(--len && scrollTop + 72 < sections[len].offsetTop) {}
-  //   link.forEach((ltx) => {ltx.classList.remove('active')});
-  //   link[len].classList.add('active');
-  // }
-  //  link();
-
-  
   navbar.classList.remove('open');
 
 
@@ -83,7 +73,7 @@ window.addEventListener("scroll", () => {
 });
 
 
-// Navbar toggle button for small screen
+// 모바일을 위한 Navbar 토글 버튼
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 const navbarCloseBtn = document.querySelector('.navbar__close-btn');
 const logo = document.querySelector('.logo');
@@ -107,21 +97,21 @@ firstNav.addEventListener('click', () => {
 })
 
 
-// Handle click on Contact Me button on home
+// home에서 Contact Me 버튼 클릭시 조작
 const homeContactBtn = document.querySelector('.home__contact');  
 homeContactBtn.addEventListener('click', () => {
   scrollIntoView('#contact');
 });
 
 
-// Make home slowly fade to transparent as the window scrolls down
+// home을 윈도우 스크롤 다운시 천천히 사라지게 조작
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight; 
 });
 
-// Show "arrow up" button when scrolloing down
+// 스크롤 다운할 때 탑 버튼 보이기
 const arrowUP = document.querySelector('.arrow__up')
 document.addEventListener('scroll', () => {
   if(window.scrollY > homeHeight / 2) {
@@ -131,26 +121,27 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// Handle click on the "arrow up" button 
+// 탑 버튼 클릭 조작
 arrowUP.addEventListener('click', () => {
   scrollIntoView('#home');
 });
 
-// Projects
+// 프로젝트
 const workBtnContainer = document.querySelector('.work__categoris');
 const projectContainer = document.querySelector('.work__projects');
 const projects = document.querySelectorAll('.work__projects li');
+
 workBtnContainer.addEventListener('click', (e) => {
   const filter = e.target.dataset.filter || e.target.parentNode.dataset.filter;
   if(filter == null) {
     return;
   }
 
-  // Remove seletions from the previous item and select the nav
-const active = document.querySelector('.category__btn.selected');
-active.classList.remove('selected');
-const target = e.target.nodeName === 'BUTTON' ? e.target :  e.target.parentNode;
-target.classList.add('selected');
+  // 이전 항목에서 선택 항목을 제거 그리고 네비 선택
+  const active = document.querySelector('.category__btn.selected');
+  active.classList.remove('selected');
+  const target = e.target.nodeName === 'BUTTON' ? e.target :  e.target.parentNode;
+  target.classList.add('selected');
 
 
   projectContainer.classList.add('anim-out');
@@ -168,7 +159,7 @@ target.classList.add('selected');
 });
 
 
-// skills
+// 스킬
 const chart1 = document.querySelector('.doughnut1');
 const chart2 = document.querySelector('.doughnut2');
 const chart3 = document.querySelector('.doughnut3');
