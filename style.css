@@ -247,14 +247,12 @@ section {
 
 @media (hover: none) { 
   .major__icon:hover i {
-    color: var(--color-dark-pink);
     transform: rotate(-30deg) scale(1.1);
   }  
 }
 
 @media (hover: hover) { 
   .major__icon:hover i {
-    color: var(--color-dark-pink);
     transform: rotate(-30deg) scale(1.1);
   }  
 }
@@ -508,7 +506,7 @@ section {
 @media (hover: none) { 
   .contact__links i:hover {
     transform: scale(1.1);
-    color: var(--color-yellow);
+    color: var(--color-black);
   }
 }
 
@@ -553,15 +551,16 @@ section {
   transition: all 300ms ease-in;
 }
 
-@media (hover: none) { 
+
+@media (hover: hover) { 
   .arrow__up:hover {
     background-color: var(--color-yellow);
   } 
 }
 
-@media (hover: hover) { 
+@media (hover: none) { 
   .arrow__up:hover {
-    background-color: var(--color-yellow);
+    background-color: var(--color-black);
   } 
 }
 
