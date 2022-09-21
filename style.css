@@ -245,15 +245,15 @@ section {
   transition: all var(--animation-duratoin) ease;
 }
 
-@media (hover: none) { 
+@media (hover: hover) { 
   .major__icon:hover i {
     transform: rotate(-30deg) scale(1.1);
   }  
 }
 
-@media (hover: hover) { 
+@media (hover: none) { 
   .major__icon:hover i {
-    transform: rotate(-30deg) scale(1.1);
+    transform: none;
   }  
 }
 
@@ -386,16 +386,8 @@ section {
   background-color: var(--color-yellow);
 }
 
-@media (hover: none) { 
-  .category__btn:hover {
-    background-color: var(--color-yellow);
-  }
-}
-
-@media (hover: hover) { 
-  .category__btn:hover {
-    background-color: var(--color-yellow);
-  }
+.category__btn:hover {
+  background-color: var(--color-yellow);
 }
 
 .work__contents {
@@ -431,16 +423,16 @@ section {
   margin: 15px;
 }
 
-@media (hover: none) { 
+@media (hover: hover) { 
   .work__projects li:hover {
     transform: translateY(0px);
     box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 20%);
   } 
 }
 
-@media (hover: hover) { 
+@media (hover: none) { 
   .work__projects li:hover {
-    transform: translateY(0px);
+    transform: translateY(10px);
     box-shadow: 4px 12px 30px 6px rgb(0 0 0 / 20%);
   } 
 }
@@ -503,17 +495,17 @@ section {
   transition: all var(--animation-duratoin) ease-in;
 }
 
-@media (hover: none) { 
-  .contact__links i:hover {
-    transform: scale(1.1);
-    color: var(--color-black);
-  }
-}
-
 @media (hover: hover) { 
   .contact__links i:hover {
     transform: scale(1.1);
     color: var(--color-yellow);
+  }
+}
+
+@media (hover: none) { 
+  .contact__links i:hover {
+    transform: scale(1.1);
+    color: var(--color-black);
   }
 }
 
