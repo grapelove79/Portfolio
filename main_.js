@@ -31,9 +31,6 @@ const link = document.querySelectorAll('.links');
 const sections = document.querySelectorAll('section');
 const navbar = document.querySelector('.header__container');
 
-
-
-
 // 메뉴 클릭시 스무스하게
 document.querySelectorAll(".paraNav ul li a").forEach( li => {
   li.addEventListener("click", e => {
@@ -57,7 +54,6 @@ window.addEventListener("scroll", () => {
           document.querySelector(".navbar__menu li:nth-child("+(index+1)+")").classList.add("active");
       }
   });
-
 
   //Skill
   if(scrollTop + 72 > sections[2].offsetTop && scrollTop + 72 < sections[3].offsetTop){
