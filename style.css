@@ -484,12 +484,6 @@ section {
 }
 
 /* Contact */
-#contact {
-  display: flex;
-  align-items: center;
-  height: 85vh;
-} 
-
 .contact__container p {
   padding: 30px 0 60px 0;
   font-size: 27px;
@@ -780,10 +774,6 @@ section {
     height: 182px;
   }
 
-  #contact {
-    height: 89vh;
-  }
-
   .contact__container p {
     padding: 50px 0 80px 0;
     font-size: 33px;
@@ -941,10 +931,6 @@ section {
     font-weight: 600;
   }
 
-  #contact {
-    height: 84vh;
-  }
-
   .contact__container p {
     font-size: var(--font-regular);
     padding: 30px 0 60px 0;
@@ -964,5 +950,9 @@ section {
     height: 38px;
     font-size: 22px;
   }
+  
+}
+
+@media all and (max-width:479px) {
   
 }

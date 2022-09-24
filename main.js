@@ -31,9 +31,6 @@ const link = document.querySelectorAll('.links');
 const sections = document.querySelectorAll('section');
 const navbar = document.querySelector('.header__container');
 
-
-
-
 // 메뉴 클릭시 스무스하게
 document.querySelectorAll(".paraNav ul li a").forEach( li => {
   li.addEventListener("click", e => {
@@ -44,19 +41,30 @@ document.querySelectorAll(".paraNav ul li a").forEach( li => {
   });
 });
 
-
+function activMenu() {
+  let len = sections.length;
+  while(--len && window.scrollY + 72 < sections[len].offsetTop){}
+  link.forEach(ltx => ltx.classList.remove('active'));
+  link[len].classList.add('active');
+}
+activMenu();
 window.addEventListener("scroll", () => { 
   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+  activMenu();
  
   // 메뉴 활성화
-  sections.forEach((element, index) => {
-      if( scrollTop + 72 >= element.offsetTop - 2 ){
-        link.forEach(li => {
-              li.classList.remove("active");
-          });
-          document.querySelector(".navbar__menu li:nth-child("+(index+1)+")").classList.add("active");
-      }
-  });
+  // sections.forEach((element, index) => {
+  //     if( scrollTop + 72 >= element.offsetTop - 2 ){
+  //       link.forEach(li => {
+  //             li.classList.remove("active");
+  //         });
+  //         document.querySelector(".navbar__menu li:nth-child("+(index+1)+")").classList.add("active");
+  //     }
+  // });
+
+
+
 
 
   //Skill
