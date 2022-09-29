@@ -26,70 +26,26 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// 스크롤할 때 메뉴와 활성화
-const link = document.querySelectorAll('.links');
-const sections = document.querySelectorAll('section');
-const navbar = document.querySelector('.header__container');
-
 // 메뉴 클릭시 스무스하게
-document.querySelectorAll(".paraNav ul li a").forEach( li => {
+document.querySelectorAll(".navbar__contents ul li a").forEach( li => {
   li.addEventListener("click", e => {
       e.preventDefault();
-      document.querySelector(li.getAttribute("href")).scrollIntoView({
-          behavior: "smooth"
-      });
+      const target = e.target; 
+      // const link = target.hash;
+      const link = target.attributes.href.nodeValue;
+      scrollIntoView(link);
+    //   document.querySelector(li.getAttribute("href")).scrollIntoView({
+    //     behavior: "smooth"
+    // });
   });
 });
 
-function activMenu() {
-  let len = sections.length;
-  while(--len && window.scrollY + 72 < sections[len].offsetTop){}
-  link.forEach(ltx => ltx.classList.remove('active'));
-  link[len].classList.add('active');
-}
-activMenu();
-window.addEventListener("scroll", () => { 
-  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
-
-  activMenu();
- 
-  // 메뉴 활성화
-  // sections.forEach((element, index) => {
-  //     if( scrollTop + 72 >= element.offsetTop - 2 ){
-  //       link.forEach(li => {
-  //             li.classList.remove("active");
-  //         });
-  //         document.querySelector(".navbar__menu li:nth-child("+(index+1)+")").classList.add("active");
-  //     }
-  // });
-
-
-
-
-
-  //Skill
-  if(scrollTop + 72 > sections[2].offsetTop && scrollTop + 72 < sections[3].offsetTop){
-    // startSkills();
-    if (!isScoreDrawStarted){
-      startSkills();
-        }
-  }else{
-    isScoreDrawStarted = false;
-  }		
-
-  navbar.classList.remove('open');
-
-
-  //스크롤 탑 수치 표기
-  // document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
-});
-
-
 // 모바일을 위한 Navbar 토글 버튼
+const navbar = document.querySelector('.header__container');
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 const navbarCloseBtn = document.querySelector('.navbar__close-btn');
 const logo = document.querySelector('.logo');
-const firstNav = document.querySelector('.links [href="#main"]');
+const firstNav = document.querySelector('.link [href="#home"]');
 
 navbarToggleBtn.addEventListener('click', () => {
   navbar.classList.toggle('open');
@@ -123,7 +79,7 @@ document.addEventListener("scroll", () => {
   home.style.opacity = 1 - window.scrollY / homeHeight; 
 });
 
-// 스크롤 다운할 때 탑 버튼 보이기
+// 스크롤 다운할 때 "위로가기 화살표" 버튼 보이기
 const arrowUP = document.querySelector('.arrow__up')
 document.addEventListener('scroll', () => {
   if(window.scrollY > homeHeight / 2) {
@@ -133,7 +89,7 @@ document.addEventListener('scroll', () => {
   }
 });
 
-// 탑 버튼 클릭 조작
+//  "위로가기 화살표" 버튼 클릭 조작
 arrowUP.addEventListener('click', () => {
   scrollIntoView('#home');
 });
@@ -170,7 +126,6 @@ workBtnContainer.addEventListener('click', (e) => {
   }, 300);
 });
 
-
 // 스킬
 const chart1 = document.querySelector('.doughnut1');
 const chart2 = document.querySelector('.doughnut2');
@@ -192,7 +147,6 @@ const makeChart = (percent, classname, color) => {
   }, 10);
 }
 
-
 const colorFn = (i, classname, color) => {
   classname.style.background = "conic-gradient(" + color + " 0% " + i + "%, #dedede " + i + "% 100%)";
 }
@@ -202,8 +156,91 @@ makeChart(70, chart2, '#0A174E');
 makeChart(95, chart3, '#66d2ce');
 makeChart(80, chart4, '#dd8acb');
 
+
+// 1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
+// 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
+// 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
+const sectionIds = [
+  '#home',
+  '#about',
+  '#skills',
+  '#work',
+  '#contact',
+];
+
+const sections = sectionIds.map((id) => document.querySelector(id));
+const navItems = sectionIds.map((id) =>
+  document.querySelector(`.link [href="${id}"]`)
+);
+let selectedNavIndex = 0;
+let selectedNavItem = navItems[0];
+function selectNavItem(selected) {
+  // console.log('a', selected);
+  selectedNavItem.parentNode.classList.remove('active');
+  selectedNavItem = selected;
+  selectedNavItem.parentNode.classList.add('active');
+}
+
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
   scrollTo.scrollIntoView({ behavior: 'smooth' });
+  selectNavItem(navItems[sectionIds.indexOf(selector)])
 }
+
+const observerOptions = {
+  root: null, //viewport
+  rootMargin: '0px',
+  threshold: 0.3,
+};
+
+const observerCallback = (entries, observer) => {
+  entries.forEach((entry) => {
+    //요소가 빠져 나갈때(진입하지 않을때)
+    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
+       const index = sectionIds.indexOf(`#${entry.target.id}`);
+      // 스크롤링이 아래로 되어서 페이지가 올라옴 (y가 -인 경우)
+      if (entry.boundingClientRect.y < 0) {
+        selectedNavIndex = index + 1;
+      } else { // 페이지가 내려가는 경우 (y가 +인 경우)
+        selectedNavIndex = index - 1;
+      }
+    }
+  });
+};
+
+const observer = new IntersectionObserver(observerCallback, observerOptions);
+sections.forEach((section) => observer.observe(section));
+
+window.addEventListener('scroll', () => {
+  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+
+  if (window.scrollY === 0) {
+    selectedNavIndex = 0;
+  } else if (
+    Math.round(window.scrollY + window.innerHeight) >=
+    document.body.clientHeight
+  ) {
+    selectedNavIndex = navItems.length - 1;
+  }
+  selectNavItem(navItems[selectedNavIndex]);
+
+  //Skill
+  if(scrollTop + 72 > sections[2].offsetTop && scrollTop + 72 < sections[3].offsetTop){
+    // startSkills();
+    if (!isScoreDrawStarted){
+      startSkills();
+        }
+  }else{
+    isScoreDrawStarted = false;
+  }		
+
+  navbar.classList.remove('open');
+
+
+  //스크롤 탑 수치 표기
+  // document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
+});
+
+
+
 

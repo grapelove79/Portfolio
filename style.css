@@ -118,7 +118,7 @@ h1.logo {
   display: inline-block;
 }
 
-.links.active .navbar__menu__item::after { 
+.link.active .navbar__menu__item::after { 
   left: 0;
   right: 0;
 }
@@ -134,7 +134,7 @@ h1.logo {
   z-index: -1; 
 }
 
-.links.active .navbar__menu__item:hover::after,
+.link.active .navbar__menu__item:hover::after,
 .navbar__menu__item:hover::after {
   left: 0;
   right: 0;
@@ -485,8 +485,12 @@ section {
 
 /* Contact */
 .contact__container p {
-  padding: 30px 0 60px 0;
-  font-size: 27px;
+  padding: 10px 0 40px 0;
+  font-size: 30px;
+}
+
+.contact__phone {
+  font-size: 26px;
 }
 
 .contact__links {
@@ -706,13 +710,13 @@ section {
     z-index: -1; 
   }
 
-  .links.active .navbar__menu__item::after {
+  .link.active .navbar__menu__item::after {
     left: 0;
     right: 0;
     bottom: 10px;
   }
 
-  /* .links.active .navbar__menu__item:hover::after,
+  /* .link.active .navbar__menu__item:hover::after,
   .navbar__menu__item:hover::after {
       left: 0;
       right: 0;
@@ -774,10 +778,10 @@ section {
     height: 182px;
   }
 
-  .contact__container p {
+  /* .contact__container p {
     padding: 50px 0 80px 0;
     font-size: 33px;
-  }
+  } */
 
   .footer__container {
     max-width: 900px;
@@ -792,7 +796,7 @@ section {
   }
 
   .section h4 {
-    font-size: 18px;
+    font-size: var(--font-regular);
   }
 
   .section__container {
@@ -932,8 +936,11 @@ section {
   }
 
   .contact__container p {
-    font-size: var(--font-regular);
-    padding: 30px 0 60px 0;
+    font-size: 20px;
+  }
+
+  .contact__phone {
+    font-size: 16px;
   }
 
   .footer__container {
@@ -950,9 +957,5 @@ section {
     height: 38px;
     font-size: 22px;
   }
-  
-}
-
-@media all and (max-width:479px) {
   
 }
