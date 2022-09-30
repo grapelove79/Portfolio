@@ -31,9 +31,9 @@ document.querySelectorAll(".navbar__contents ul li a").forEach( li => {
   li.addEventListener("click", e => {
       e.preventDefault();
       const target = e.target; 
-      // const link = target.hash;
       const link = target.attributes.href.nodeValue;
       scrollIntoView(link);
+      // const link = target.hash;
     //   document.querySelector(li.getAttribute("href")).scrollIntoView({
     //     behavior: "smooth"
     // });
@@ -45,7 +45,7 @@ const navbar = document.querySelector('.header__container');
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 const navbarCloseBtn = document.querySelector('.navbar__close-btn');
 const logo = document.querySelector('.logo');
-const firstNav = document.querySelector('.link [href="#home"]');
+const firstNav = document.querySelector('.navbar__menu li [href="#home"]');
 
 navbarToggleBtn.addEventListener('click', () => {
   navbar.classList.toggle('open');
@@ -157,72 +157,23 @@ makeChart(95, chart3, '#66d2ce');
 makeChart(80, chart4, '#dd8acb');
 
 
-// 1. 모든 섹션 요소들과 메뉴아이템들을 가지고 온다
-// 2. IntersectionObserver를 이용해서 모든 섹션들을 관찰한다
-// 3. 보여지는 섹션에 해당하는 메뉴 아이템을 활성화 시킨다
-const sectionIds = [
-  '#home',
-  '#about',
-  '#skills',
-  '#work',
-  '#contact',
-];
 
-const sections = sectionIds.map((id) => document.querySelector(id));
-const navItems = sectionIds.map((id) =>
-  document.querySelector(`.link [href="${id}"]`)
-);
-let selectedNavIndex = 0;
-let selectedNavItem = navItems[0];
-function selectNavItem(selected) {
-  // console.log('a', selected);
-  selectedNavItem.parentNode.classList.remove('active');
-  selectedNavItem = selected;
-  selectedNavItem.parentNode.classList.add('active');
-}
-
-function scrollIntoView(selector) {
-  const scrollTo = document.querySelector(selector);
-  scrollTo.scrollIntoView({ behavior: 'smooth' });
-  selectNavItem(navItems[sectionIds.indexOf(selector)])
-}
-
-const observerOptions = {
-  root: null, //viewport
-  rootMargin: '0px',
-  threshold: 0.3,
-};
-
-const observerCallback = (entries, observer) => {
-  entries.forEach((entry) => {
-    //요소가 빠져 나갈때(진입하지 않을때)
-    if (!entry.isIntersecting && entry.intersectionRatio > 0) {
-       const index = sectionIds.indexOf(`#${entry.target.id}`);
-      // 스크롤링이 아래로 되어서 페이지가 올라옴 (y가 -인 경우)
-      if (entry.boundingClientRect.y < 0) {
-        selectedNavIndex = index + 1;
-      } else { // 페이지가 내려가는 경우 (y가 +인 경우)
-        selectedNavIndex = index - 1;
-      }
-    }
-  });
-};
-
-const observer = new IntersectionObserver(observerCallback, observerOptions);
-sections.forEach((section) => observer.observe(section));
+// 보여지는 섹션에 해당하는 메뉴 아이템을 활성화
+const links = document.querySelectorAll('.navbar__menu li');
+const sections = document.querySelectorAll('section');
 
 window.addEventListener('scroll', () => {
   let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
 
-  if (window.scrollY === 0) {
-    selectedNavIndex = 0;
-  } else if (
-    Math.round(window.scrollY + window.innerHeight) >=
-    document.body.clientHeight
-  ) {
-    selectedNavIndex = navItems.length - 1;
-  }
-  selectNavItem(navItems[selectedNavIndex]);
+  // 메뉴 활성화
+  sections.forEach((element, index) => {
+      if(scrollTop >= element.offsetTop - 2 || Math.round(scrollTop + window.innerHeight) >= document.body.clientHeight){
+        links.forEach(li => {
+          li.classList.remove("active");
+        });
+        document.querySelector(".navbar__menu li:nth-child("+(index+1)+")").classList.add("active");
+      }
+  });
 
   //Skill
   if(scrollTop + 72 > sections[2].offsetTop && scrollTop + 72 < sections[3].offsetTop){
@@ -244,3 +195,7 @@ window.addEventListener('scroll', () => {
 
 
 
+function scrollIntoView(selector) {
+  const scrollTo = document.querySelector(selector);
+  scrollTo.scrollIntoView({ behavior: 'smooth' });
+}

@@ -118,7 +118,7 @@ h1.logo {
   display: inline-block;
 }
 
-.link.active .navbar__menu__item::after { 
+.navbar__menu li.active .navbar__menu__item::after { 
   left: 0;
   right: 0;
 }
@@ -134,7 +134,7 @@ h1.logo {
   z-index: -1; 
 }
 
-.link.active .navbar__menu__item:hover::after,
+.navbar__menu li.active .navbar__menu__item:hover::after,
 .navbar__menu__item:hover::after {
   left: 0;
   right: 0;
@@ -710,13 +710,13 @@ section {
     z-index: -1; 
   }
 
-  .link.active .navbar__menu__item::after {
+  .navbar__menu li.active .navbar__menu__item::after {
     left: 0;
     right: 0;
     bottom: 10px;
   }
 
-  /* .link.active .navbar__menu__item:hover::after,
+  /* .navbar__menu li.active .navbar__menu__item:hover::after,
   .navbar__menu__item:hover::after {
       left: 0;
       right: 0;
