@@ -696,7 +696,7 @@ section {
     position: absolute;
     top: 50%;
     width: 100%;
-    transform: translateY(-40%);
+    transform: translateY(-42%);
   }
 
   .navbar__menu li {
@@ -709,7 +709,7 @@ section {
     font-size: 20px;
     font-weight: var(--weight-semi-bold);
     z-index: 1;
-    line-height: 50px;
+    line-height: 52px;
   }
 
   .navbar__menu__item::after { 
