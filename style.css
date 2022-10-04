@@ -679,6 +679,8 @@ section {
   .header__container.open .navbar__menu  { 
     display: block;
     position: fixed;
+    overflow-x: hidden;
+    overflow-y: auto;
     z-index: 3;
     top: 0;
     left: 0;
