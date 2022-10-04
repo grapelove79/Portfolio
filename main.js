@@ -37,8 +37,10 @@ document.querySelectorAll(".navbar__contents ul li a").forEach( li => {
     //   document.querySelector(li.getAttribute("href")).scrollIntoView({
     //     behavior: "smooth"
     // });
+      navbar.classList.remove('open');
   });
 });
+
 
 // 모바일을 위한 Navbar 토글 버튼
 const navbar = document.querySelector('.header__container');
@@ -185,7 +187,7 @@ window.addEventListener('scroll', () => {
     isScoreDrawStarted = false;
   }		
 
-  navbar.classList.remove('open');
+  // navbar.classList.remove('open');
 
 
   //스크롤 탑 수치 표기
