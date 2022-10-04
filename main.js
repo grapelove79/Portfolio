@@ -69,7 +69,6 @@ firstNav.addEventListener('click', () => {
   }
 })
 
-
 // home에서 Contact Me 버튼 클릭시 조작
 const homeContactBtn = document.querySelector('.home__contact');  
 homeContactBtn.addEventListener('click', () => {
@@ -81,7 +80,8 @@ homeContactBtn.addEventListener('click', () => {
 const home = document.querySelector('.home__container');
 const homeHeight = home.getBoundingClientRect().height;
 document.addEventListener("scroll", () => {
-  home.style.opacity = 1 - window.scrollY / homeHeight; 
+  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+  home.style.opacity = 1 - scrollTop / homeHeight; 
 });
 
 // 스크롤 다운할 때 "위로가기 화살표" 버튼 보이기

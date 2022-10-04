@@ -696,7 +696,7 @@ section {
     position: absolute;
     top: 50%;
     width: 100%;
-    transform: translateY(-42%);
+    transform: translateY(-44%);
   }
 
   .navbar__menu li {
