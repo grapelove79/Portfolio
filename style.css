@@ -709,7 +709,7 @@ section {
     font-size: 20px;
     font-weight: var(--weight-semi-bold);
     z-index: 1;
-    line-height: 52px;
+    line-height: 55px;
   }
 
   .navbar__menu__item::after { 
