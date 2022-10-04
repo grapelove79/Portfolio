@@ -111,9 +111,16 @@ h1.logo {
   font-size: 16px;
 }
 
+.navbar__menu li {
+  margin-right: 34px;
+}
+
+.navbar__menu li::last-of-type{
+  margin-right: 0;
+}
+
 .navbar__menu__item {
   position: relative;
-  margin: 0 18px;
   line-height: 72px;
   display: inline-block;
 }
@@ -646,11 +653,6 @@ section {
 
 /* For below 1023px screen width */
 @media screen and (max-width: 1023px) {
-  /* h1.logo {
-    padding-top: 16px;
-    padding-bottom: 16px;
-  } */
-
   .header__container.open h1.logo{
     z-index: 4;
   }
@@ -676,20 +678,29 @@ section {
     display: none;
   }
 
-  .header__container.open .navbar__menu  { 
+  .header__container.open .navbar__contents  { 
     display: block;
     position: fixed;
-    overflow-x: hidden;
-    overflow-y: auto;
     z-index: 3;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    padding: 120px 15px 27px;
     background: #fff;
     opacity: 0.98;
     box-sizing: border-box;
+  }
+  .header__container.open .navbar__menu  { 
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-40%);
+  }
+
+  .navbar__menu li {
+    margin-right: 0;
   }
 
   .navbar__menu__item {
@@ -698,6 +709,7 @@ section {
     font-size: 20px;
     font-weight: var(--weight-semi-bold);
     z-index: 1;
+    line-height: 50px;
   }
 
   .navbar__menu__item::after { 
@@ -705,25 +717,12 @@ section {
     position: absolute; 
     left: 50%; 
     right: 50%; 
-    bottom: 10px; 
-    background: var(--color-yellow);
     height: 5px;
+    bottom: 2px;
+    background: var(--color-yellow);
     transition: all var(--animation-duratoin) ease-in-out;
     z-index: -1; 
   }
-
-  .navbar__menu li.active .navbar__menu__item::after {
-    left: 0;
-    right: 0;
-    bottom: 10px;
-  }
-
-  /* .navbar__menu li.active .navbar__menu__item:hover::after,
-  .navbar__menu__item:hover::after {
-      left: 0;
-      right: 0;
-      bottom: 10px;
-  } */
 
   .section__container {
     max-width: 676px;
@@ -779,11 +778,6 @@ section {
   .project__img {
     height: 182px;
   }
-
-  /* .contact__container p {
-    padding: 50px 0 80px 0;
-    font-size: 33px;
-  } */
 
   .footer__container {
     max-width: 900px;

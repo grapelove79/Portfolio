@@ -46,11 +46,12 @@ document.querySelectorAll(".navbar__contents ul li a").forEach( li => {
 const navbar = document.querySelector('.header__container');
 const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
 const navbarCloseBtn = document.querySelector('.navbar__close-btn');
-const logo = document.querySelector('.logo');
+const logo = document.querySelector('strong');
 const firstNav = document.querySelector('.navbar__menu li [href="#home"]');
 
 navbarToggleBtn.addEventListener('click', () => {
   navbar.classList.toggle('open');
+
 });
 navbarCloseBtn.addEventListener('click', () => {
   navbar.classList.remove('open');
@@ -58,11 +59,13 @@ navbarCloseBtn.addEventListener('click', () => {
 logo.addEventListener('click', () => {
   if(navbar.classList.contains('open')) {
     navbar.classList.remove('open');
+
   }
 });
 firstNav.addEventListener('click', () => {
   if(navbar.classList.contains('open')) {
     navbar.classList.remove('open');
+
   }
 })
 
