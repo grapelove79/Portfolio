@@ -1,6 +1,6 @@
 'use strict'
 
-var isScoreDrawStarted = false
+let isScoreDrawStarted = false
 
 function startSkills(){
   isScoreDrawStarted = true	
@@ -19,7 +19,8 @@ const header = document.querySelector('#header');
 const headerHeight = header.getBoundingClientRect().height;
 
 document.addEventListener('scroll', () => {
-  if(window.scrollY > headerHeight) {
+  let scrollTop = window.pageYOffset || window.scrollY || document.documentElement.scrollTop;
+  if(scrollTop > headerHeight) {
     header.classList.add('header--white');
   } else {
     header.classList.remove('header--white');
@@ -65,7 +66,6 @@ logo.addEventListener('click', () => {
 firstNav.addEventListener('click', () => {
   if(navbar.classList.contains('open')) {
     navbar.classList.remove('open');
-
   }
 })
 
