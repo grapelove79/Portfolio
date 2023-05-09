@@ -52,7 +52,6 @@ const firstNav = document.querySelector('.navbar__menu li [href="#home"]');
 
 navbarToggleBtn.addEventListener('click', () => {
   navbar.classList.toggle('open');
-
 });
 navbarCloseBtn.addEventListener('click', () => {
   navbar.classList.remove('open');
@@ -161,8 +160,6 @@ makeChart(70, chart2, '#0A174E');
 makeChart(95, chart3, '#66d2ce');
 makeChart(80, chart4, '#dd8acb');
 
-
-
 // 보여지는 섹션에 해당하는 메뉴 아이템을 활성화
 const links = document.querySelectorAll('.navbar__menu li');
 const sections = document.querySelectorAll('section');
@@ -196,9 +193,6 @@ window.addEventListener('scroll', () => {
   //스크롤 탑 수치 표기
   // document.querySelector(".paraScroll span").innerText = parseInt(scrollTop);
 });
-
-
-
 
 function scrollIntoView(selector) {
   const scrollTo = document.querySelector(selector);
