@@ -337,13 +337,14 @@ section {
 .skill__container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 30px;
 }
 
 .chart {
   position: relative;
-  width: 300px;
-  height: 300px;
+  width: 330px;
+  height: 330px;
   border-radius: 50%;
   transition: 0.3s;
   margin-bottom: 20px;
@@ -875,7 +876,9 @@ section {
   }
 
   .skill__container li:nth-child(1),
-  .skill__container li:nth-child(2) {
+  .skill__container li:nth-child(2), 
+  .skill__container li:nth-child(3), 
+  .skill__container li:nth-child(4) {
     margin-bottom: 6vw;
   }
 

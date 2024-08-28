@@ -8,6 +8,8 @@ function startSkills(){
   makeChart(70, chart2, '#0A174E');
   makeChart(95, chart3, '#66d2ce');
   makeChart(80, chart4, '#dd8acb');
+  makeChart(30, chart5, '#9fdd8a');
+  makeChart(30, chart6, '#dd8e8a');
 }
 
 window.addEventListener('load', () => {
@@ -135,6 +137,8 @@ const chart1 = document.querySelector('.doughnut1');
 const chart2 = document.querySelector('.doughnut2');
 const chart3 = document.querySelector('.doughnut3');
 const chart4 = document.querySelector('.doughnut4');
+const chart5 = document.querySelector('.doughnut5');
+const chart6 = document.querySelector('.doughnut6');
 const chartFn={};
 
 const makeChart = (percent, classname, color) => {
@@ -159,6 +163,8 @@ makeChart(95, chart1, '#f5b914');
 makeChart(70, chart2, '#0A174E');
 makeChart(95, chart3, '#66d2ce');
 makeChart(80, chart4, '#dd8acb');
+makeChart(30, chart5, '#9fdd8a');
+makeChart(30, chart6, '#dd8e8a');
 
 // 보여지는 섹션에 해당하는 메뉴 아이템을 활성화
 const links = document.querySelectorAll('.navbar__menu li');
